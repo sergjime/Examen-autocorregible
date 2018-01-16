@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>IES Famenow</title>
+  	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel='stylesheet' media='screen and (min-width: 961px)' href='css/desktop.css'>
+	<link rel='stylesheet' media='screen and (max-width: 960px)' href='css/mobile.css'>
+</head>
+<body>
+	<div class="panoramica">
+		<img id="panoramica" alt="Panorámica" src="img/panoramica.jpg"/>
+	</div>
+	<ul id="menu">
+	  <li><a href="hacer.html">Regresar</a></li>
+	</ul>
+	<h1>IES&nbsp;<span>Famenow</span></h1>
+	<div class="contain">
+		<form id='formulario'>
+			<fieldset>
+				<legend><label><p>&nbsp;&nbsp;&nbsp;Eres piloto de avión. En Madrid entraron 10 pasajeros, en Barcelona entraron 7 y bajaron 2. 
+			    ¿Cuántos años tiene el piloto?&nbsp;&nbsp;&nbsp;</p></label></legend>
+				<input id="option1" type="radio" name="mismos" value="los_mismos"><label for="option1">Los mismos que tú</label><br/>
+				<input id="option2" type="radio" name="mismos" value="19"><label for="option2">19</label><br/>
+				<input id="option3" type="radio" name="mismos" value="21"><label for="option3">21</label><br/>
+				<input id="option4" type="radio" name="mismos" value="ni_idea"><label for="option4">Ni idea</label>
+			</fieldset>
+			<label><p>¿Qué hace un gallo después de levantar una pata?</p></label>
+			<select id="selector1">
+			<option selected></option>
+			  <option value="cae" >Se cae</option>
+			  <option value="cojo">Se queda cojo</option>
+			  <option value="apoya">Se apoya en la otra</option>
+			</select>
+			<label><p>Es blanco por dentro y verde por fuera ¿Qué es?</p></label>
+			<input type='text' value="" placeholder="Fruta">
+			<fieldset>
+				<legend><label for="multiple"><p>&nbsp;&nbsp;&nbsp;¿Qué colores componen el logo de Google?&nbsp;&nbsp;&nbsp;</p></label></legend>
+				<input type="checkbox" id="r" value="red"><label for="r">Rojo</label><br/>
+				<input type="checkbox" id="p" value="purple"><label for="p">Lila</label><br/>
+				<input type="checkbox" id="o" value="orange"><label for="o">Naranja</label><br/>
+				<input type="checkbox" id="g" value="green"><label for="g">Verde</label><br/>
+				<input type="checkbox" id="y" value="yellow"><label for="y">Amarillo</label><br/>
+				<input type="checkbox" id="b" value="blue"><label for="b">Azul</label>
+			</fieldset>
+			<label><p>¿Cuáles de las siguientes afirmaciones son falsas?</p></label>
+			<select id="multiple1" multiple>
+				<option value="1" selected>El estilo de una página web se aplica con JavaScript</option>
+				<option value="2">Java y JavaScript son muy parecidos, de ahí que ambos empiecen por java</option>
+				<option value="3">Un evento es una iteracción con el usuario</option>
+				<option value="4">ondblclick es un tipo de evento de JavaScript</option>
+			</select>
+			<label><p>Seleciona el número correcto: 3 x 3 + 2</p></label>
+			<input type='number' value="" step="1">
+			<label><p>Es la reina de los mares, su dentadura es muy buena, y por no ir nunca vacía siempre dicen que va llena.</p></label>
+			<input type='text' value="" placeholder="Animal">
+			<fieldset>
+				<legend><label><p>&nbsp;&nbsp;&nbsp;¿Cuál de estas afirmaciones es incorrecta?&nbsp;&nbsp;&nbsp;</p></label></legend>
+				<input id="git" type="radio" name="incorrecta" value="git"><label for="git">Git es un software de control de versiones diseñado por Linus Torvalds</label><br/>
+				<input id="rama" type="radio" name="incorrecta" value="rama"><label for="rama">En Git <span class="negcurs">&lt;git branch&gt;</span> impacta en la rama en la que te encuentras parado</label><br/>
+				<input id="libre" type="radio" name="incorrecta" value="libre"><label for="libre">Git es software libre</label><br/>
+			</fieldset>
+			<label><p>¿Cuál NO es un tipo de software libre?</p></label>
+			<select id="selector2">
+			  <option selected></option>
+			  <option value="freedos">FreeDOS</option>
+			  <option value="safari">Safari</option>
+			  <option value="vlc">VLC</option>
+			  <option value="haiku">Haiku</option>
+			  <option value="libreoffice">LibreOffice</option>
+			  <option value="syllable">Syllable</option>
+			  <option value="ubuntu">Ubuntu</option>
+			  <option value="firefox">Mozilla Firefox</option>
+			</select>
+			<label><p>Hablando de colores luz ¿Qué colores tendríamos que mezclar para obtener el color blanco?</p></label>
+			<select id="multiple2" multiple>
+				<option value="1" selected>Verde</option>
+				<option value="2">Gris</option>
+				<option value="3">Azul</option>
+				<option value="4">Rojo</option>
+				<option value="4">Amarillo</option>
+				<option value="4">Naranja</option>
+				<option value="4">Rosa</option>
+			</select>
+			<fieldset>
+				<legend><label for="multiple"><p>&nbsp;&nbsp;&nbsp;¿Qué sentencias SQL son DDL?&nbsp;&nbsp;&nbsp;</p></label></legend>
+				<input type="checkbox" id="r" value="red"><label for="r">SELECT</label><br/>
+				<input type="checkbox" id="p" value="purple"><label for="p">UPDATE</label><br/>
+				<input type="checkbox" id="o" value="orange"><label for="o">ALTER</label><br/>
+				<input type="checkbox" id="g" value="green"><label for="g">DELETE</label><br/>
+				<input type="checkbox" id="y" value="yellow"><label for="y">TRUNCATE</label><br/>
+				<input type="checkbox" id="b" value="blue"><label for="b">INSERT</label>
+			</fieldset>
+			<br/><br/>
+			<input type='submit' value="Corregir"> 
+		</div>
+	</form>
+	</div>
+</body>
+</html>
