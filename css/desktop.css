@@ -97,7 +97,7 @@ fieldset{
 	border: #d3d3d3 1px solid;
 	border-radius: 10px;
 }
-legend, label p,.negcurs{
+legend,.negcurs{
 	font-weight: bold;
 }
 label.pregunta{
