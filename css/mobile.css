@@ -1,46 +1,23 @@
 html {
    background-color:#dfdfdf;
-  }
+}
 body {
   font-family:  'Lucida Sans Unicode', sans-serif;
-  font-size: 14px;
+  font-size: 20px;
   background-color: #FFFFFF;
   border: #d3d3d3 1px solid;
   text-align: justify;
   margin: 10px  auto;
   width: 900px;
-  }
-
-table.reservas th {
-    background-color: #EFD3B3;
-    color: #5F8F11;
 }
-table.reservas td.titulo {
-    background-color: #D6EFC2;
-}
-
-td {
-	background-color: #EFFFEF;
-	border-color: #BF823B;
-}
-
-table.reservas {
-    font-size: 90%;
-    background-color: #EFD3B3;
-    text-align: center;
-    margin: 10px auto;
-    width: 410px;
-    border: #BF823B 1px solid;
-}
-
 h1 { 
   text-align: center;
   color: #5F8F11;
   letter-spacing: .2em;
-  }
+}
 h1 span{
   color: #BF823B;
-  }     
+}     
 h2 {
   color: #70AF0A;
   border-bottom: #CFDFB5 1px solid;
@@ -56,14 +33,21 @@ h3 {
   color: #BF823B;
   margin-bottom: 0; 
   margin-top: 25px;
-  }
-div.contenido {
-  border: #d3d3d3 1px solid;
+}
+#panoramica{
+	border-radius: 30%;
+}
+div.contenido{
   margin: 20px 20px 10px 140px; 
-  padding: 10px 15px;
+}
+div.contenido,div.contain {
+  border: #d3d3d3 1px solid;
+  padding: 10px 20px;
   background: linear-gradient(to top, white 95%, #DDDDDD);
-  }
- 
+}
+div.contain {
+  margin: 20px 20px 10px 20px;
+}
 div.panoramica {
 	text-align: center;
 }
@@ -102,11 +86,25 @@ div.panoramica {
 	#menu li.activa a, #menu li.activa:hover a{
 		color:#000;
 	}
-	
-img.animal {
-	border: #70AF0A 2px solid;
-	background-color: #BF823B;
-	padding: 2px;
-	margin: 50px 0 10px 10px;
-	float: right;   
+p.contact span{
+	font-weight: bold;
+}
+form input,select,#multiple{
+	font-size: 20px;
+	padding: 1%;
+}
+fieldset{
+	border: #d3d3d3 1px solid;
+	border-radius: 10px;
+}
+legend,.negcurs{
+	font-weight: bold;
+}
+label.pregunta{
+	font-weight: bold;
+	border-color: #9F9F9F;
+	background: linear-gradient(to top, #E5CDB2 , white);
+	text-align: center;
+	color:#000;
+	padding: 0.5% 1%;
 }
