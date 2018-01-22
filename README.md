@@ -14,4 +14,5 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 - 2 de tipo desplegable
 - 2 de tipo checkbox
 - 2 de tipo texto
+
 El rawgit de este proyecto lo podemos ver [aquí](https://rawgit.com/sergjime/Examen-parte1/master/index.html).
