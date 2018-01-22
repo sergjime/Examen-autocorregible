@@ -14,7 +14,7 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 - 2 de tipo desplegable
 - 2 de tipo checkbox
 - 2 de tipo texto
-
+# Preguntas
 | Cabecera A | Cabecera B |
 | ---------- | ---------- |
 | Campo A0   | Campo B0   |
