@@ -17,7 +17,7 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 ### Tipo Radio
 | **Pregunta 1** | **Pregunta 7** |
 | ---------- | ---------- |
-| Campo A0   | Campo B0   |
+| ![Pregunta 1:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta1(radio).png)   | ![Pregunta 7:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta7(radio).png)   |
 ### Tipo Desplegable
 | **Pregunta 2** | **Pregunta 8** |
 | ---------- | ---------- |
