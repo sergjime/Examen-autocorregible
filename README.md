@@ -14,10 +14,12 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 - 2 de tipo desplegable
 - 2 de tipo checkbox
 - 2 de tipo texto
-# Preguntas
-| Cabecera A | Cabecera B |
+### Tipo Radio
+| **Pregunta 1** | **Pregunta 7** |
 | ---------- | ---------- |
 | Campo A0   | Campo B0   |
-| Campo A1   | Campo B1   |
-
+### Tipo Desplegable
+| **Pregunta 2** | **Pregunta 8** |
+| ---------- | ---------- |
+| Campo A0   | Campo B0   |
 El rawgit de este proyecto lo podemos ver [aquí](https://rawgit.com/sergjime/Examen-parte1/master/index.html).
