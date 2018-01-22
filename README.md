@@ -21,19 +21,18 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 ### Tipo Desplegable
 | **Pregunta 2** | **Pregunta 8** |
 | ---------- | ---------- |
-| Campo A0   | Campo B0   |
+| ![Pregunta 2:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta2(desplegable).png)   | ![Pregunta 8:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta8(desplegable).png)   |
 ### Tipo Selector Múltiple
 | **Pregunta 5** | **Pregunta 9** |
 | ---------- | ---------- |
-| Campo A0   | Campo B0   |
+| ![Pregunta 5:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta5(multiple).png)   | ![Pregunta 9:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta9(multiple).png)   |
 ### Tipo Checkbox
 | **Pregunta 4** | **Pregunta 10** |
 | ---------- | ---------- |
-| Campo A0   | Campo B0   |
+| ![Pregunta 4:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta4(checkbox).png)   | ![Pregunta 10:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta10(checkbox).png)   |
 ### Tipo Texto
 | **Pregunta 3** | **Pregunta 6** |
 | ---------- | ---------- |
-| Campo A0   | Campo B0   |
-
+| ![Pregunta 3:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta3(texto).png)   | ![Pregunta 6:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta6(texto).png)   |
 
 El rawgit de este proyecto lo podemos ver [aquí](https://rawgit.com/sergjime/Examen-parte1/master/index.html).
