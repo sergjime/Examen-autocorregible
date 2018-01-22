@@ -22,4 +22,18 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 | **Pregunta 2** | **Pregunta 8** |
 | ---------- | ---------- |
 | Campo A0   | Campo B0   |
+### Tipo Selector Múltiple
+| **Pregunta 5** | **Pregunta 9** |
+| ---------- | ---------- |
+| Campo A0   | Campo B0   |
+### Tipo Checkbox
+| **Pregunta 4** | **Pregunta 10** |
+| ---------- | ---------- |
+| Campo A0   | Campo B0   |
+### Tipo Texto
+| **Pregunta 3** | **Pregunta 6** |
+| ---------- | ---------- |
+| Campo A0   | Campo B0   |
+
+
 El rawgit de este proyecto lo podemos ver [aquí](https://rawgit.com/sergjime/Examen-parte1/master/index.html).
