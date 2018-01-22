@@ -14,23 +14,23 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 - 2 de tipo desplegable
 - 2 de tipo checkbox
 - 2 de tipo texto
-`### Tipo Radio`
+### Tipo Radio
 | **Pregunta 1** | **Pregunta 7** |
 | ---------- | ---------- |
 | ![Pregunta 1:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta1(radio).png)   | ![Pregunta 7:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta7(radio).png)   |
-`### Tipo Desplegable`
+### Tipo Desplegable
 | **Pregunta 2** | **Pregunta 8** |
 | ---------- | ---------- |
 | ![Pregunta 2:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta2(desplegable).png)   | ![Pregunta 8:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta8(desplegable).png)   |
-`### Tipo Selector Múltiple`
+### Tipo Selector Múltiple
 | **Pregunta 5** | **Pregunta 9** |
 | ---------- | ---------- |
 | ![Pregunta 5:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta5(multiple).png)   | ![Pregunta 9:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta9(multiple).png)   |
-`### Tipo Checkbox`
+### Tipo Checkbox
 | **Pregunta 4** | **Pregunta 10** |
 | ---------- | ---------- |
 | ![Pregunta 4:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta4(checkbox).png)   | ![Pregunta 10:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta10(checkbox).png)   |
-`### Tipo Texto`
+### Tipo Texto
 | **Pregunta 3** | **Pregunta 6** |
 | ---------- | ---------- |
 | ![Pregunta 3:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta3(texto).png)   | ![Pregunta 6:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta6(texto).png)   |
