@@ -7,6 +7,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel='stylesheet' media='screen and (min-width: 961px)' href='css/desktop.css'>
 	<link rel='stylesheet' media='screen and (max-width: 960px)' href='css/mobile.css'>
+	<script src="js/questions.js"></script>
 </head>
 <body>
 	<div class="panoramica">
@@ -16,89 +17,56 @@
 	  <li><a href="hacer.html">Regresar</a></li>
 	</ul>
 	<h1>IES&nbsp;&nbsp;<span>Famenow</span></h1>
+	<div id="test"><h3>Test base de informática</h3></div>
 	<div class="contain">
 		<form id='formulario'>
 			<label class="pregunta">Pregunta 1</label><br/><br/>
-			<fieldset>
-				<legend><label class="negcurs">&nbsp;&nbsp;&nbsp;Eres piloto de avión. En Madrid entraron 10 pasajeros, en Barcelona entraron 7 y bajaron 2. 
-			    ¿Cuántos años tiene el piloto?&nbsp;&nbsp;&nbsp;</label></legend>
-				<input id="option1" type="radio" name="mismos" value="los_mismos"><label for="option1">Los mismos que tú</label><br/>
-				<input id="option2" type="radio" name="mismos" value="19"><label for="option2">19</label><br/>
-				<input id="option3" type="radio" name="mismos" value="21"><label for="option3">21</label><br/>
-				<input id="option4" type="radio" name="mismos" value="ni_idea"><label for="option4">Ni idea</label>
-			</fieldset><br/>
+			<label class="negcurs"></label><br/>
+			<input type='text' value=""><br/><br/>			
 			<label class="pregunta">Pregunta 2</label><br/><br/>
-			<label class="negcurs">¿Qué hace un gallo después de levantar una pata?</label><br/>
-			<select id="selector1">
-			  <option value="cae" selected>Se cae</option>
-			  <option value="cojo">Se queda cojo</option>
-			  <option value="apoya">Se apoya en la otra</option>
-			</select><br/><br/>
+			<label class="negcurs"></label><br/>
+			<input type='text' value=""><br/><br/>			
 			<label class="pregunta">Pregunta 3</label><br/><br/>
-			<label class="negcurs">Es blanco por dentro y verde por fuera ¿Qué es?</label><br/>
-			<input type='text' value="" placeholder="Fruta"><br/><br/>
+			<label class="negcurs"></label><br/>
+			<select class="selector">
+				<option value="-1" selected>Selecciona una...</option>
+			</select><br/><br/>
 			<label class="pregunta">Pregunta 4</label><br/><br/>
-			<fieldset>
-				<legend><label class="negcurs">&nbsp;&nbsp;&nbsp;¿Qué colores componen el logo de Google?&nbsp;&nbsp;&nbsp;</label></legend>
-				<input type="checkbox" id="r" value="red"><label for="r">Rojo</label><br/>
-				<input type="checkbox" id="p" value="purple"><label for="p">Lila</label><br/>
-				<input type="checkbox" id="o" value="orange"><label for="o">Naranja</label><br/>
-				<input type="checkbox" id="g" value="green"><label for="g">Verde</label><br/>
-				<input type="checkbox" id="y" value="yellow"><label for="y">Amarillo</label><br/>
-				<input type="checkbox" id="b" value="blue"><label for="b">Azul</label>
-			</fieldset><br/>
+			<label class="negcurs"></label><br/>
+			<select class="selector">
+				<option value="-1" selected>Selecciona una...</option>
+			</select><br/><br/>			
 			<label class="pregunta">Pregunta 5</label><br/><br/>
-			<label class="negcurs">¿Cuáles de las siguientes afirmaciones son falsas?</label><br/>
-			<select id="multiple1" multiple>
-				<option value="1" selected>El estilo de una página web se aplica con JavaScript</option>
-				<option value="2">Java y JavaScript son muy parecidos, de ahí que ambos empiecen por java</option>
-				<option value="3">Un evento es una iteracción con el usuario</option>
-				<option value="4">ondblclick es un tipo de evento de JavaScript</option>
+			<label class="negcurs"></label><br/>
+			<select class="selector" multiple>
+				<option value="-1" selected>Selecciona más de una</option>
 			</select><br/><br/>
 			<label class="pregunta">Pregunta 6</label><br/><br/>
-			<label class="negcurs">Es la reina de los mares, su dentadura es muy buena, y por no ir nunca vacía siempre dicen que va llena.</label><br/>
-			<input type='text' value="" placeholder="Animal"><br/><br/>
+			<label class="negcurs"></label><br/>
+			<select class="selector" multiple>
+				<option value="-1" selected>Selecciona más de una</option>
+			</select><br/><br/>
 			<label class="pregunta">Pregunta 7</label><br/><br/>
 			<fieldset>
-				<legend><label class="negcurs">&nbsp;&nbsp;&nbsp;¿Cuál de estas afirmaciones es incorrecta?&nbsp;&nbsp;&nbsp;</label></legend>
-				<input id="git" type="radio" name="incorrecta" value="git"><label for="git">Git es un software de control de versiones diseñado por Linus Torvalds</label><br/>
-				<input id="rama" type="radio" name="incorrecta" value="rama"><label for="rama">En Git <span class="negcurs">&lt;git branch&gt;</span> impacta en la rama en la que te encuentras parado</label><br/>
-				<input id="libre" type="radio" name="incorrecta" value="libre"><label for="libre">Git es software libre</label><br/>
-			</fieldset><br/>
+				<legend><label class="negcurs "></label></legend>
+				<div class="radiocheckPregunta"></div>
+			</fieldset></br>			
 			<label class="pregunta">Pregunta 8</label><br/><br/>
-			<label class="negcurs">¿Cuál NO es un tipo de software libre?</label><br/>
-			<select id="selector2">
-			  <option value="freedos" selected>FreeDOS</option>
-			  <option value="safari">Safari</option>
-			  <option value="vlc">VLC</option>
-			  <option value="haiku">Haiku</option>
-			  <option value="libreoffice">LibreOffice</option>
-			  <option value="syllable">Syllable</option>
-			  <option value="ubuntu">Ubuntu</option>
-			  <option value="firefox">Mozilla Firefox</option>
-			</select><br/><br/>
+			<fieldset>
+				<legend><label class="negcurs"></label></legend>
+				<div class="radiocheckPregunta"></div>
+			</fieldset><br/>
 			<label class="pregunta">Pregunta 9</label><br/><br/>
-			<label class="negcurs">Hablando de colores luz ¿Qué colores tendríamos que mezclar para obtener el color blanco?</label><br/>
-			<select id="multiple2" multiple>
-				<option value="1" selected>Verde</option>
-				<option value="2">Gris</option>
-				<option value="3">Azul</option>
-				<option value="4">Rojo</option>
-				<option value="4">Amarillo</option>
-				<option value="4">Naranja</option>
-				<option value="4">Rosa</option>
-			</select><br/><br/>
+			<fieldset>
+				<legend><label class="negcurs"></label></legend>
+				<div class="radiocheckPregunta"></div>
+			</fieldset><br/>
 			<label class="pregunta">Pregunta 10</label><br/><br/>
 			<fieldset>
-				<legend><label class="negcurs">&nbsp;&nbsp;&nbsp;¿Qué sentencias SQL son DDL?&nbsp;&nbsp;&nbsp;</label></legend>
-				<input type="checkbox" id="_select_" value="sel"><label for="_select_">SELECT</label><br/>
-				<input type="checkbox" id="_update_" value="upd"><label for="_update_">UPDATE</label><br/>
-				<input type="checkbox" id="_alter_" value="alt"><label for="_alter_">ALTER</label><br/>
-				<input type="checkbox" id="_delete_" value="del"><label for="_delete_">DELETE</label><br/>
-				<input type="checkbox" id="_truncate_" value="tru"><label for="_truncate_">TRUNCATE</label><br/>
-				<input type="checkbox" id="_insert_" value="ins"><label for="_insert_">INSERT</label>
-			</fieldset>
-			<br/><br/>
+				<legend><label class="negcurs"></label></legend>
+				<div class="radiocheckPregunta"></div>
+			</fieldset><br/>
+			<br/>
 			<input type='submit' value="Corregir"> 
 		</form>
 	</div>

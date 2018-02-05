@@ -37,6 +37,9 @@ h3 {
 #panoramica{
 	border-radius: 30%;
 }
+#test{
+	padding: 10px 20px;
+}
 div.contenido{
   margin: 20px 20px 10px 140px; 
 }
@@ -96,6 +99,9 @@ form input,select,#multiple{
 fieldset{
 	border: #d3d3d3 1px solid;
 	border-radius: 10px;
+}
+input{
+	margin-top: 1%;
 }
 legend,.negcurs{
 	font-weight: bold;

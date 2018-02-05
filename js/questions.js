@@ -1,72 +1,142 @@
-var formElement=null;
-var numeroSecreto=null;
-var respuestaSelect=null;
-var respuestasCheckbox = [];
-var nota = 0;  //nota de la prueba sobre 3 puntos (hay 3 preguntas)
-
-//**************************************************************************************************** 
-//Después de cargar la página (onload) se definen los eventos sobre los elementos entre otras acciones.
 window.onload = function(){ 
-
- //CORREGIR al apretar el botón
- formElement=document.getElementById('myform');
- formElement.onsubmit=function(){
-   inicializar();
-   if (comprobar()){
-    corregirNumber();
-    corregirSelect();
-    corregirCheckbox();
-    presentarNota();
-   }
-   return false;
- }
- 
- //LEER XML de xml/preguntas.xml
- var xhttp = new XMLHttpRequest();
- xhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-   gestionarXml(this);
-  }
- };
- xhttp.open("GET", "xml/preguntas.xml", true);
- xhttp.send();
+	//LEER XML de xml/preguntas.xml
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (this.readyState == 4 && this.status == 200) {
+			gestionarXml(this);
+		}
+	};
+	xhttp.open("GET", "xml/preguntas.xml", true);
+	xhttp.send();
 }
 
-//****************************************************************************************************
+function pintarPreguntaTexto(titulo, position){
+	document.getElementsByClassName("negcurs")[position].innerHTML = titulo;
+}
+
+function ponerPreguntaSelected(titulo,opciones, position){
+	document.getElementsByClassName("negcurs")[position].innerHTML = titulo;
+	
+	var selector = document.getElementsByClassName("selector")[position-2];
+	
+	for(var i=0; i < opciones.length; i++){
+		var label = document.createElement("option");
+		label.text= opciones[i];
+		label.value=i+1;
+		label.id="P7R"+i;
+		label.name="Pre7";
+		selector.options.add(label);
+	}
+}
+
+function ponerPreguntaCheckRadio(titulo,opciones, position){
+	var container = document.getElementsByClassName("radiocheckPregunta")[position-6];
+	document.getElementsByClassName("negcurs")[position].innerHTML = titulo;
+	var tipo = "";
+	if(position > 7){
+		tipo = "radio";
+	}else{
+		tipo = "checkbox";
+	}
+
+	for (i = 0; i < opciones.length; i++) { 
+		var input = document.createElement("input");
+		var label = document.createElement("label");
+		label.innerHTML=opciones[i];
+		label.setAttribute("for", "P1R"+i);
+		input.type = tipo;
+		input.name="Pre1";
+		input.id="P1R"+i;    
+		container.appendChild(input);
+		container.appendChild(label);
+		container.appendChild(document.createElement("br"));		
+	}	
+}
+
 // Recuperamos los datos del fichero XML xml/preguntas.xml
 // xmlDOC es el documento leido XML. 
 function gestionarXml(dadesXml){
 	var xmlDoc = dadesXml.responseXML; //Parse XML to xmlDoc
+	datosXml = xmlDoc;
+	
+	//input text 1
+	var titulo=xmlDoc.getElementsByTagName("title")[0].innerHTML;
+	pintarPreguntaTexto(titulo, 0);
 
-	//NUMBER
-	//Recuperamos el título y la respuesta correcta de Input, guardamos el número secreto
-	var tituloInput=xmlDoc.getElementsByTagName("title")[0].innerHTML;
-	ponerDatosInputHtml(tituloInput);
-	numeroSecreto=parseInt(xmlDoc.getElementsByTagName("answer")[0].innerHTML);
 
-	//SELECT
-	//Recuperamos el título y las opciones, guardamos la respuesta correcta
-	var tituloSelect1=xmlDoc.getElementsByTagName("title")[1].innerHTML;
-	var opcionesSelect1 = [];
-	var nopt = xmlDoc.getElementById("profe_002").getElementsByTagName('option').length;
+	//input text 2
+	var titulo=xmlDoc.getElementsByTagName("title")[1].innerHTML;
+	pintarPreguntaTexto(titulo, 1);
+	
+	//selected pregunta 3
+	var titulo = xmlDoc.getElementsByTagName("title")[2].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe003").getElementsByTagName("option").length;
 	for (i = 0; i < nopt; i++) { 
-		opcionesSelect[i] = xmlDoc.getElementById("profe_002").getElementsByTagName('option')[i].innerHTML;
-	}
-	alert("La pregunta 2 es " + tituloSelect1 + " y sus opciones son: " + opcionesSelect1);
-	ponerDatosSelectHtml(tituloSelect1,opcionesSelect1);
-	respuestaSelect=parseInt(xmlDoc.getElementsByTagName("answer")[1].innerHTML);
+		opciones[i]=xmlDoc.getElementById("profe003").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaSelected(titulo,opciones, 2);
 
-	//CHECKBOX
-	//Recuperamos el título y las opciones, guardamos las respuestas correctas
-	var tituloCheckbox = xmlDoc.getElementsByTagName("title")[2].innerHTML;
-	var opcionesCheckbox = [];
-	var nopt = xmlDoc.getElementById("profe_003").getElementsByTagName('option').length;
+	//selected pregunta 4
+	var titulo = xmlDoc.getElementsByTagName("title")[3].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe004").getElementsByTagName("option").length;
 	for (i = 0; i < nopt; i++) { 
-		opcionesCheckbox[i]=xmlDoc.getElementById("profe_003").getElementsByTagName('option')[i].innerHTML;
-	}
-	ponerDatosCheckboxHtml(tituloCheckbox,opcionesCheckbox);
-	var nres = xmlDoc.getElementById("profe_003").getElementsByTagName('answer').length;
-	for (i = 0; i < nres; i++) {
-		respuestasCheckbox[i]=xmlDoc.getElementById("profe_003").getElementsByTagName("answer")[i].innerHTML;
-	}
+		opciones[i]=xmlDoc.getElementById("profe004").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaSelected(titulo,opciones, 3);
+	
+	//selected pregunta 5
+	var titulo = xmlDoc.getElementsByTagName("title")[4].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe005").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe005").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaSelected(titulo,opciones, 4);
+
+	//selected pregunta 6
+	var titulo = xmlDoc.getElementsByTagName("title")[5].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe006").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe006").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaSelected(titulo,opciones, 5);
+	
+	//checkbox pregunta 7
+	var titulo = xmlDoc.getElementsByTagName("title")[6].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe007").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe007").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaCheckRadio(titulo,opciones, 6);
+
+	//checkbox pregunta 8
+	var titulo = xmlDoc.getElementsByTagName("title")[7].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe008").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe008").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaCheckRadio(titulo,opciones, 7);
+	
+	//Radio pregunta 9
+	var titulo = xmlDoc.getElementsByTagName("title")[8].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe009").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe009").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaCheckRadio(titulo,opciones, 8);
+
+	//Radio pregunta 10
+	var titulo = xmlDoc.getElementsByTagName("title")[9].innerHTML;
+	var opciones = [];
+	var nopt = xmlDoc.getElementById("profe0010").getElementsByTagName("option").length;
+	for (i = 0; i < nopt; i++) { 
+		opciones[i]=xmlDoc.getElementById("profe0010").getElementsByTagName("option")[i].innerHTML;
+	}  
+	ponerPreguntaCheckRadio(titulo,opciones, 9);
 }

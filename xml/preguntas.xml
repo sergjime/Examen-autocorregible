@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE questions>
 <questions>
 	<question id='profe001'>
 		<type>text</type>
-		<title>¿A qué nos referimos cuando hablamos de la asignación de un nombre a una dirección IP?</title>
+		<title>¿A qué tipo de servidor nos referimos cuando hablamos de la asignación de un nombre a una dirección IP?</title>
 		<answer>dns</answer>
 	</question>
 	<question id='profe002'>
@@ -22,7 +21,7 @@
 		<option>Syllable</option>
 		<option>Ubuntu</option>
 		<option>Mozilla Firefox</option>
-		<answer>2</answer>
+		<answer>1</answer>
 	</question>
 	<question id='profe004'>
 		<type>select</type>
@@ -32,7 +31,7 @@
 		<option>font-weight: bold;</option>
 		<option>font-family: bold;</option>
 		<option>font: bold;</option>
-		<answer>3</answer>
+		<answer>2</answer>
 	</question>
 	<question id='profe005'>
 		<type>multiple</type>
@@ -41,21 +40,21 @@
 		<option>Java y JavaScript son muy parecidos, de ahí que ambos empiecen por java</option> 
 		<option>Un evento es una iteracción con el usuario</option> 
 		<option>ondblclick es un tipo de evento de JavaScript</option>
+		<answer>0</answer>
 		<answer>1</answer>
-		<answer>2</answer>
 	</question>
 	<question id='profe006'>
 		<type>multiple</type>
-		<title>¿Qué valor no puede contener una variable de tipo int?</title>
+		<title>¿Qué valores no pueden contener una variable de tipo int?</title>
 		<option>49</option>
 		<option>'24'</option> 
 		<option>-3</option> 
 		<option>4.8</option>
 		<option>507</option> 
 		<option>46.0</option>
-		<answer>1</answer>
-		<answer>3</answer>
-		<answer>5</answer>
+		<answer>0</answer>
+		<answer>2</answer>
+		<answer>4</answer>
 	</question>
 	<question id='profe007'>
 		<type>checkbox</type>
@@ -66,8 +65,8 @@
 		<option>DELETE</option>
 		<option>TRUNCATE</option> 
 		<option>INSERT</option>
-		<answer>3</answer>
-		<answer>5</answer>
+		<answer>2</answer>
+		<answer>4</answer>
 	</question>
 	<question id='profe008'>
 		<type>checkbox</type>
@@ -78,10 +77,10 @@
 		<option>onclick</option>
 		<option>onresize</option> 
 		<option>onfocus</option>
+		<answer>2</answer>
 		<answer>3</answer>
 		<answer>4</answer>
 		<answer>5</answer>
-		<answer>6</answer>
 	</question>
 	<question id='profe009'>
 		<type>radio</type>
@@ -91,7 +90,7 @@
 		<option>ls -f</option>
 		<option>ls -a</option>
 		<option>Las demás respuestas son incorrectas</option>
-		<answer>4</answer>
+		<answer>3</answer>
 	</question>
 	<question id='profe0010'>
 		<type>radio</type>
@@ -100,6 +99,6 @@
 		<option>GROUP BY</option> 
 		<option>IN</option>
 		<option>LIKE</option>
-		<answer>1</answer>
+		<answer>0</answer>
 	</question>
 </questions>
