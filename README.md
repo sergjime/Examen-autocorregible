@@ -1,5 +1,5 @@
 # Examen autocorregible
-| Aspecto antes de enlazar el xml | Flecha | ![Aspecto después de enlazar el xml:](https://github.com/sergjime/Examen-parte1/blob/master/img/aspecto_test.jpg) |
+| Aspecto antes de enlazar el xml | ![Flecha](https://github.com/sergjime/Examen-autocorregible/blob/master/img/Flecha-derecha.png) | ![Aspecto después de enlazar el xml:](https://github.com/sergjime/Examen-parte1/blob/master/img/aspecto_test.jpg) |
 ## Partes de las cuales consta el examen realizado
 ------------------------------------------------------------------------------
 ### Dos archivos .css
