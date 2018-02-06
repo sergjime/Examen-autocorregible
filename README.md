@@ -1,5 +1,5 @@
 # Examen autocorregible
-| Aspecto antes de enlazar el xml | https://vignette.wikia.nocookie.net/southparkla/images/1/18/Flecha-derecha.png/revision/latest?cb=20120709003426&path-prefix=es | ![Aspecto después de enlazar el xml:](https://github.com/sergjime/Examen-parte1/blob/master/img/aspecto_test.jpg) |
+| Aspecto antes de enlazar el xml | Flecha | ![Aspecto después de enlazar el xml:](https://github.com/sergjime/Examen-parte1/blob/master/img/aspecto_test.jpg) |
 ## Partes de las cuales consta el examen realizado
 ------------------------------------------------------------------------------
 ### Dos archivos .css
