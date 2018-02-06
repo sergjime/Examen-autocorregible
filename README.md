@@ -1,5 +1,5 @@
 # Examen autocorregible
-![Aspecto después de enlazar el xml:](https://github.com/sergjime/Examen-parte1/blob/master/img/aspecto_test.jpg) 
+![Aspecto:](https://github.com/sergjime/Examen-autocorregible/blob/master/img/aspecto.png) 
 ## Partes de las cuales consta el examen realizado
 ------------------------------------------------------------------------------
 ### Dos archivos .css
