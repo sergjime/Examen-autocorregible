@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <questions>
-	<question id='profe001'>
+	<question id='profe_001'>
 		<type>text</type>
 		<title>¿A qué tipo de servidor nos referimos cuando hablamos de la asignación de un nombre a una dirección IP?</title>
 		<answer>dns</answer>
 	</question>
-	<question id='profe002'>
+	<question id='profe_002'>
 		<type>text</type>
 		<title>¿A qué clase pertenece la dirección IP 192.168.1.3?</title>
 		<answer>c</answer>
 	</question>
-	<question id='profe003'>
+	<question id='profe_003'>
 		<type>select</type>
 		<title>¿Cuál NO es un tipo de software libre?</title>
 		<option>FreeDOS</option>
@@ -23,7 +23,7 @@
 		<option>Mozilla Firefox</option>
 		<answer>1</answer>
 	</question>
-	<question id='profe004'>
+	<question id='profe_004'>
 		<type>select</type>
 		<title>¿En CSS cómo podemos cambiar un texto a negrita?</title>
 		<option>font-size: bold;</option>
@@ -33,7 +33,7 @@
 		<option>font: bold;</option>
 		<answer>2</answer>
 	</question>
-	<question id='profe005'>
+	<question id='profe_005'>
 		<type>multiple</type>
 		<title>¿Cuáles de las siguientes afirmaciones son falsas?</title>
 		<option>El estilo de una página web se aplica con JavaScript</option>
@@ -43,7 +43,7 @@
 		<answer>0</answer>
 		<answer>1</answer>
 	</question>
-	<question id='profe006'>
+	<question id='profe_006'>
 		<type>multiple</type>
 		<title>¿Qué valores no pueden contener una variable de tipo int?</title>
 		<option>49</option>
@@ -56,7 +56,7 @@
 		<answer>2</answer>
 		<answer>4</answer>
 	</question>
-	<question id='profe007'>
+	<question id='profe_007'>
 		<type>checkbox</type>
 		<title>¿Qué sentencias SQL son DDL?</title>
 		<option>SELECT</option>
@@ -68,7 +68,7 @@
 		<answer>2</answer>
 		<answer>4</answer>
 	</question>
-	<question id='profe008'>
+	<question id='profe_008'>
 		<type>checkbox</type>
 		<title>¿Qué tipo de eventos son de JavaScript?</title>
 		<option>onclass</option>
@@ -82,7 +82,7 @@
 		<answer>4</answer>
 		<answer>5</answer>
 	</question>
-	<question id='profe009'>
+	<question id='profe_009'>
 		<type>radio</type>
 		<title>¿Qué comando en Ubuntu te permite visualizar un listado con los archivos ocultos</title>
 		<option>ls -o</option>
@@ -92,7 +92,7 @@
 		<option>Las demás respuestas son incorrectas</option>
 		<answer>3</answer>
 	</question>
-	<question id='profe0010'>
+	<question id='profe_0010'>
 		<type>radio</type>
 		<title>¿Qué cláusula se utiliza para ordenar alfabéticamente?</title>
 		<option>ORDER BY</option>
