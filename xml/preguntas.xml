@@ -92,7 +92,7 @@
 		<option>Las demás respuestas son incorrectas</option>
 		<answer>3</answer>
 	</question>
-	<question id='profe0010'>
+	<question id='profe010'>
 		<type>radio</type>
 		<title>¿Qué cláusula se utiliza para ordenar alfabéticamente?</title>
 		<option>ORDER BY</option>
