@@ -136,9 +136,9 @@ function gestionarXml(dadesXml){
 	//Radio pregunta 10
 	var titulo = xmlDoc.getElementsByTagName("title")[9].innerHTML;
 	var opciones = [];
-	var nopt = xmlDoc.getElementById("profe010").getElementsByTagName("option").length;
+	var nopt = xmlDoc.getElementById("profe0010").getElementsByTagName("option").length;
 	for (i = 0; i < nopt; i++) { 
-		opciones[i]=xmlDoc.getElementById("profe010").getElementsByTagName("option")[i].innerHTML;
+		opciones[i]=xmlDoc.getElementById("profe0010").getElementsByTagName("option")[i].innerHTML;
 	}  
 	ponerPreguntaCheckRadio(titulo,opciones, 9);
 }
