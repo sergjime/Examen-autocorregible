@@ -1,4 +1,5 @@
 var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/preguntas.xml";
+var la_id=null;
 
 window.onload = function(){ 
 	//LEER XML de xml/preguntas.xml
@@ -25,8 +26,8 @@ function ponerPreguntaSelected(titulo,opciones, position){
 		var label = document.createElement("option");
 		label.text= opciones[i];
 		label.value=i+1;
-		label.id="P7R"+i;
-		label.name="Pre7";
+		label.id="PR"+i;
+		label.name="Pre";
 		selector.options.add(label);
 	}
 }
@@ -37,18 +38,28 @@ function ponerPreguntaCheckRadio(titulo,opciones, position){
 	var tipo = "";
 	if(position > 7){
 		tipo = "radio";
+		if(position == 8){
+			la_id = 9;
+		}else{
+			la_id = 10;
+		}
 	}else{
 		tipo = "checkbox";
+		if(position == 6){
+			la_id = 7;
+		}else{
+			la_id = 8;
+		}
 	}
 
 	for (i = 0; i < opciones.length; i++) { 
 		var input = document.createElement("input");
 		var label = document.createElement("label");
 		label.innerHTML=opciones[i];
-		label.setAttribute("for", "P1R"+i);
+		label.setAttribute("for", "PR"+la_id+"_"+i);
 		input.type = tipo;
-		input.name="Pre1";
-		input.id="P1R"+i;    
+		input.name="Pre"+la_id;
+		input.id="PR"+la_id+"_"+i;    
 		container.appendChild(input);
 		container.appendChild(label);
 		container.appendChild(document.createElement("br"));		
@@ -136,9 +147,9 @@ function gestionarXml(dadesXml){
 	//Radio pregunta 10
 	var titulo = xmlDoc.getElementsByTagName("title")[9].innerHTML;
 	var opciones = [];
-	var nopt = xmlDoc.getElementById("profe0010").getElementsByTagName("option").length;
+	var nopt = xmlDoc.getElementById("profe010").getElementsByTagName("option").length;
 	for (i = 0; i < nopt; i++) { 
-		opciones[i]=xmlDoc.getElementById("profe0010").getElementsByTagName("option")[i].innerHTML;
+		opciones[i]=xmlDoc.getElementById("profe010").getElementsByTagName("option")[i].innerHTML;
 	}  
 	ponerPreguntaCheckRadio(titulo,opciones, 9);
 }
