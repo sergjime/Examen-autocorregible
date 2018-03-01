@@ -20,54 +20,63 @@
 	<div id="test"><h3>Test base de informática</h3></div>
 	<div class="contain">
 		<form id='formulario'>
-			<label class="pregunta">Pregunta 1</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<input type='text' value=""><br/><br/>			
-			<label class="pregunta">Pregunta 2</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<input type='text' value=""><br/><br/>			
-			<label class="pregunta">Pregunta 3</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<select class="selector">
+			<div><label class="pregunta">Pregunta 1</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><input type="text" name="p1texto" value=""></div>			
+			<div><label class="pregunta">Pregunta 2</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><input type="text" name="p2texto" value=""></div>			
+			<div><label class="pregunta">Pregunta 3</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><select class="selector" name="p3selector">
 				<option value="-1" selected>Selecciona una...</option>
-			</select><br/><br/>
-			<label class="pregunta">Pregunta 4</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<select class="selector">
+			</select></div>			
+			<div><label class="pregunta">Pregunta 4</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><select class="selector" name="p4selector">
 				<option value="-1" selected>Selecciona una...</option>
-			</select><br/><br/>			
-			<label class="pregunta">Pregunta 5</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<select class="selector" multiple>
+			</select></div>			
+			<div><label class="pregunta">Pregunta 5</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><select class="selector" name="p5multiple" multiple>
 				<option value="-1" selected>Selecciona más de una</option>
-			</select><br/><br/>
-			<label class="pregunta">Pregunta 6</label><br/><br/>
-			<label class="negcurs"></label><br/>
-			<select class="selector" multiple>
+			</select></div>			
+			<div><label class="pregunta">Pregunta 6</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><label class="negcurs"></label></div>
+			<div><select class="selector" name="p6multiple" multiple>
 				<option value="-1" selected>Selecciona más de una</option>
-			</select><br/><br/>
-			<label class="pregunta">Pregunta 7</label><br/><br/>
-			<fieldset>
+			</select></div>			
+			<div><label class="pregunta">Pregunta 7</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><fieldset>
 				<legend><label class="negcurs "></label></legend>
-				<div class="radiocheckPregunta"></div>
-			</fieldset></br>			
-			<label class="pregunta">Pregunta 8</label><br/><br/>
-			<fieldset>
-				<legend><label class="negcurs"></label></legend>
-				<div class="radiocheckPregunta"></div>
-			</fieldset><br/>
-			<label class="pregunta">Pregunta 9</label><br/><br/>
-			<fieldset>
-				<legend><label class="negcurs"></label></legend>
-				<div class="radiocheckPregunta"></div>
-			</fieldset><br/>
-			<label class="pregunta">Pregunta 10</label><br/><br/>
-			<fieldset>
-				<legend><label class="negcurs"></label></legend>
-				<div class="radiocheckPregunta"></div>
-			</fieldset><br/>
-			<br/>
-			<input type='submit' value="Corregir"> 
+				<div class="radiocheckPregunta" name="p7check"></div>
+			</fieldset></div>			
+			<div><label class="pregunta">Pregunta 8</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><fieldset>
+				<legend><label class="negcurs "></label></legend>
+				<div class="radiocheckPregunta" name="p8check"></div>
+			</fieldset></div>			
+			<div><label class="pregunta">Pregunta 9</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><fieldset>
+				<legend><label class="negcurs "></label></legend>
+				<div class="radiocheckPregunta" name="p9radio"></div>
+			</fieldset></div>			
+			<div><label class="pregunta">Pregunta 10</label></div><br/>
+			<div><div class="main_correcta"></div><div class="main_fallida"></div></div>
+			<div><fieldset>
+				<legend><label class="negcurs "></label></legend>
+				<div class="radiocheckPregunta" name="p10radio"></div>
+			</fieldset></div>
+			<input type='submit' value="Corregir" ><div id="correct"><div id="correctas"></div><div id="fallidas"></div></div>
 		</form>
 	</div>
 </body>
