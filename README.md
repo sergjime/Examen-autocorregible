@@ -6,7 +6,7 @@
 - desktop.css (versión para escritorio)
 - mobile.css (versión para móvil)
 ### Dos capas
-En una capa en la parte superior del documento está la imagen mientras que la otra capa contiene el contenido (en este caso el formulario con las preguntas).
+En una capa la parte superior del documento está la imagen mientras que la otra capa contiene el contenido (en este caso el formulario con las preguntas).
 ## El contenido
 El contenido contiene un formulario en su interior el cual consta de 10 preguntas:
 - 2 de tipo texto
