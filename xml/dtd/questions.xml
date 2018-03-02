@@ -53,18 +53,18 @@
 		<option>4.8</option>
 		<option>507</option> 
 		<option>46.0</option>
-		<answer>0</answer>
-		<answer>2</answer>
-		<answer>4</answer>
+		<answer>1</answer>
+		<answer>3</answer>
+		<answer>5</answer>
 	</question>
 	<question id='profe007'>
 		<type>checkbox</type>
 		<title>¿Qué sentencias SQL son DDL?</title>
 		<option>SELECT</option>
+		<option>CREATE</option> 
+		<option>DELETE</option> 
+		<option>ALTER</option>
 		<option>UPDATE</option> 
-		<option>ALTER</option> 
-		<option>DELETE</option>
-		<option>TRUNCATE</option> 
 		<option>INSERT</option>
 		<answer>2</answer>
 		<answer>4</answer>
@@ -78,10 +78,10 @@
 		<option>onclick</option>
 		<option>onresize</option> 
 		<option>onfocus</option>
-		<answer>2</answer>
 		<answer>3</answer>
 		<answer>4</answer>
 		<answer>5</answer>
+		<answer>6</answer>
 	</question>
 	<question id='profe009'>
 		<type>radio</type>

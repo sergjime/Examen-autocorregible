@@ -1,4 +1,4 @@
-var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
+//var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
 var la_id=null;
 var xmlDoc;
 
@@ -10,7 +10,7 @@ window.onload = function(){
 			gestionarXml(this);
 		}
 	};
-	xhttp.open("GET", url, true);
+	xhttp.open("GET", "xml/dtd/questions.xml", true);
 	xhttp.send();
 }
 
@@ -222,7 +222,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_correcta")[6].style.display = "none";
 		}	
 	}
-	
+
 	var seleccionadas8 = [];
 	var pos8 = 0;
 	for (j =0; j < pregunta8.length; j++) {
@@ -262,7 +262,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_correcta")[7].style.display = "none";
 		}	
 	}
-	
+
 	var seleccionada9 = "";
 	for (j =0; j < pregunta9.length; j++) {
 		if(pregunta9[j].checked){
@@ -273,8 +273,10 @@ window.onsubmit = function(){
 		alert("Selecciona una opción en la pregunta 9");
 		return false;
 	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[8].innerHTML;
-		if(seleccionada9 == respuesta){
+		seleccionada9 = parseInt(seleccionada9);
+		var sel9 = seleccionada9 - 1;
+		var respuesta=xmlDoc.getElementById("profe009").getElementsByTagName("answer")[0].innerHTML;
+		if(sel9 == respuesta){
 			correctas++;
 			document.getElementsByClassName("main_correcta")[8].style.display = "block";
 			document.getElementsByClassName("main_fallida")[8].style.display = "none";
@@ -295,8 +297,10 @@ window.onsubmit = function(){
 		alert("Selecciona una opción en la pregunta 10");
 		return false;
 	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[9].innerHTML;
-		if(seleccionada10 == respuesta){
+		seleccionada10 = parseInt(seleccionada10);
+		var sel10 = seleccionada10 - 1;
+		var respuesta=xmlDoc.getElementById("profe0010").getElementsByTagName("answer")[0].innerHTML;
+		if(sel10 == respuesta){
 			correctas++;
 			document.getElementsByClassName("main_correcta")[9].style.display = "block";
 			document.getElementsByClassName("main_fallida")[9].style.display = "none";
