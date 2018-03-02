@@ -1,5 +1,5 @@
 var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
-var la_id=null;
+var la_id = null;
 var xmlDoc;
 
 window.onload = function(){ 
@@ -16,6 +16,7 @@ window.onload = function(){
 
 window.onsubmit = function(){
 	
+	var no_vacio = 0;
 	var correctas = 0;
 	var fallidas = 0;
 	
@@ -30,72 +31,35 @@ window.onsubmit = function(){
 	var pregunta9 = document.getElementById('formulario').Pre9;
 	var pregunta10 = document.getElementById('formulario').Pre10;
 	
+	//Primero validaremos nuestras preguntas antes de corregirlas
 	if(pregunta1.length == 0){
 		alert("No puede dejar la pregunta 1 sin responder");
 		document.getElementById('formulario').p1texto.focus();
 		return false;
-	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[0].innerHTML;
-		if(pregunta1 == respuesta){
-			correctas++;
-			document.getElementsByClassName("main_correcta")[0].style.display = "block";
-			document.getElementsByClassName("main_fallida")[0].style.display = "none";
-		}else{
-			fallidas++;
-			document.getElementsByClassName("main_fallida")[0].style.display = "block";
-			document.getElementsByClassName("main_correcta")[0].style.display = "none";
-		}
 	}
+	no_vacio++;
+	
 	if(pregunta2.length == 0){
 		alert("No puede dejar la pregunta 2 sin responder");
 		document.getElementById('formulario').p2texto.focus();
 		return false;
-	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[1].innerHTML;
-		if(pregunta2 == respuesta){
-			correctas++;
-			document.getElementsByClassName("main_correcta")[1].style.display = "block";
-			document.getElementsByClassName("main_fallida")[1].style.display = "none";
-		}else{
-			fallidas++;
-			document.getElementsByClassName("main_fallida")[1].style.display = "block";
-			document.getElementsByClassName("main_correcta")[1].style.display = "none";
-		}
 	}
+	no_vacio++;
 	
 	
 	if(pregunta3.selectedIndex == 0){
 		alert("Selecciona una opción en la pregunta 3");
 		document.getElementById('formulario').p3selector.focus();
 		return false;
-	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[2].innerHTML;
-		if(pregunta3.selectedIndex-1 == respuesta){
-			correctas++;
-			document.getElementsByClassName("main_correcta")[2].style.display = "block";
-			document.getElementsByClassName("main_fallida")[2].style.display = "none";
-		}else{
-			fallidas++;
-			document.getElementsByClassName("main_fallida")[2].style.display = "block";
-			document.getElementsByClassName("main_correcta")[2].style.display = "none";
-		}
 	}
+	no_vacio++;
+	
 	if(pregunta4.selectedIndex == 0){
 		alert("Selecciona una opción en la pregunta 4");
 		document.getElementById('formulario').p4selector.focus();
 		return false;
-	}else{
-		var respuesta=xmlDoc.getElementsByTagName("answer")[3].innerHTML;
-		if(pregunta4.selectedIndex-1 == respuesta){
-			correctas++;
-			document.getElementsByClassName("main_correcta")[3].style.display = "block";
-			document.getElementsByClassName("main_fallida")[3].style.display = "none";
-		}else{
-			fallidas++;
-			document.getElementsByClassName("main_fallida")[3].style.display = "block";
-			document.getElementsByClassName("main_correcta")[3].style.display = "none";
-		}
 	}
+	no_vacio++;
 	
 	var seleccionadas5 = [];
 	var opciones5 = pregunta5.getElementsByTagName('option').length;
@@ -110,7 +74,124 @@ window.onsubmit = function(){
 		alert("Selecciona más de una opción válida en la pregunta 5");
 		pregunta5.focus();
 		return false;
-	}else{
+	}
+	no_vacio++;
+	
+	var seleccionadas6 = [];
+	var opciones6 = pregunta6.getElementsByTagName('option').length;
+	var pos6 = 0;
+	for (j =0; j < opciones6; j++) {
+		if(pregunta6[j].selected){
+			seleccionadas6[pos6] = pregunta6[j].value;
+			pos6++;
+		}
+	}
+	if(seleccionadas6.length == 0 || seleccionadas6.length == 1 || seleccionadas6[0] == -1){
+		alert("Selecciona más de una opción válida en la pregunta 6");
+		pregunta6.focus();
+		return false;
+	}
+	no_vacio++;
+	
+	var seleccionadas7 = [];
+	var pos7 = 0;
+	for (j =0; j < pregunta7.length; j++) {
+		if(pregunta7[j].checked){
+			seleccionadas7[pos7] = pregunta7[j].value;
+			pos7++;
+		}
+	}
+	if(seleccionadas7.length == 0 || seleccionadas7.length == 1){
+		alert("Selecciona más de una opción en la pregunta 7");
+		return false;
+	}
+	no_vacio++;
+
+	var seleccionadas8 = [];
+	var pos8 = 0;
+	for (j =0; j < pregunta8.length; j++) {
+		if(pregunta8[j].checked){
+			seleccionadas8[pos8] = pregunta8[j].value;
+			pos8++;
+		}
+	}
+	if(seleccionadas8.length == 0 || seleccionadas8.length == 1){
+		alert("Selecciona más de una opción en la pregunta 8");
+		return false;
+	}
+	no_vacio++;
+
+	var seleccionada9 = "";
+	for (j =0; j < pregunta9.length; j++) {
+		if(pregunta9[j].checked){
+			seleccionada9 = pregunta9[j].value;
+		}
+	}
+	if(seleccionada9 == ""){
+		alert("Selecciona una opción en la pregunta 9");
+		return false;
+	}
+	no_vacio++;
+	
+	var seleccionada10 = "";
+	for (j =0; j < pregunta10.length; j++) {
+		if(pregunta10[j].checked){
+			seleccionada10 = pregunta10[j].value;
+		}
+	}
+	if(seleccionada10 == ""){
+		alert("Selecciona una opción en la pregunta 10");
+		return false;
+	}
+	no_vacio++;
+	
+	//Después de validar que ninguna esté vacía procedemos a la corrección de cada pregunta
+	if (no_vacio== 10){
+		//PREGUNTA 1
+		var respuesta=xmlDoc.getElementsByTagName("answer")[0].innerHTML;
+		if(pregunta1 == respuesta){
+			correctas++;
+			document.getElementsByClassName("main_correcta")[0].style.display = "block";
+			document.getElementsByClassName("main_fallida")[0].style.display = "none";
+		}else{
+			fallidas++;
+			document.getElementsByClassName("main_fallida")[0].style.display = "block";
+			document.getElementsByClassName("main_correcta")[0].style.display = "none";
+		}
+		//PREGUNTA 2
+		var respuesta=xmlDoc.getElementsByTagName("answer")[1].innerHTML;
+		if(pregunta2 == respuesta){
+			correctas++;
+			document.getElementsByClassName("main_correcta")[1].style.display = "block";
+			document.getElementsByClassName("main_fallida")[1].style.display = "none";
+		}else{
+			fallidas++;
+			document.getElementsByClassName("main_fallida")[1].style.display = "block";
+			document.getElementsByClassName("main_correcta")[1].style.display = "none";
+		}
+		//PREGUNTA 3
+		var respuesta=xmlDoc.getElementsByTagName("answer")[2].innerHTML;
+		if(pregunta3.selectedIndex-1 == respuesta){
+			correctas++;
+			document.getElementsByClassName("main_correcta")[2].style.display = "block";
+			document.getElementsByClassName("main_fallida")[2].style.display = "none";
+		}else{
+			fallidas++;
+			document.getElementsByClassName("main_fallida")[2].style.display = "block";
+			document.getElementsByClassName("main_correcta")[2].style.display = "none";
+		}
+		//PREGUNTA 4
+		var respuesta=xmlDoc.getElementsByTagName("answer")[3].innerHTML;
+		if(pregunta4.selectedIndex-1 == respuesta){
+			correctas++;
+			document.getElementsByClassName("main_correcta")[3].style.display = "block";
+			document.getElementsByClassName("main_fallida")[3].style.display = "none";
+		}else{
+			fallidas++;
+			document.getElementsByClassName("main_fallida")[3].style.display = "block";
+			document.getElementsByClassName("main_correcta")[3].style.display = "none";
+		}
+		//PREGUNTA 5
 		var nres = xmlDoc.getElementById("profe005").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -136,24 +217,8 @@ window.onsubmit = function(){
 			fallidas++;
 			document.getElementsByClassName("main_fallida")[4].style.display = "block";
 			document.getElementsByClassName("main_correcta")[4].style.display = "none";
-		}	
-	}
-	
-	
-	var seleccionadas6 = [];
-	var opciones6 = pregunta6.getElementsByTagName('option').length;
-	var pos6 = 0;
-	for (j =0; j < opciones6; j++) {
-		if(pregunta6[j].selected){
-			seleccionadas6[pos6] = pregunta6[j].value;
-			pos6++;
 		}
-	}
-	if(seleccionadas6.length == 0 || seleccionadas6.length == 1 || seleccionadas6[0] == -1){
-		alert("Selecciona más de una opción válida en la pregunta 6");
-		pregunta6.focus();
-		return false;
-	}else{
+		//PREGUNTA 6
 		var nres = xmlDoc.getElementById("profe006").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -180,21 +245,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[5].style.display = "block";
 			document.getElementsByClassName("main_correcta")[5].style.display = "none";
 		}	
-	}
-	
-	
-	var seleccionadas7 = [];
-	var pos7 = 0;
-	for (j =0; j < pregunta7.length; j++) {
-		if(pregunta7[j].checked){
-			seleccionadas7[pos7] = pregunta7[j].value;
-			pos7++;
-		}
-	}
-	if(seleccionadas7.length == 0 || seleccionadas7.length == 1){
-		alert("Selecciona más de una opción en la pregunta 7");
-		return false;
-	}else{
+		//PREGUNTA 7
 		var nres = xmlDoc.getElementById("profe007").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -221,20 +272,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[6].style.display = "block";
 			document.getElementsByClassName("main_correcta")[6].style.display = "none";
 		}	
-	}
-
-	var seleccionadas8 = [];
-	var pos8 = 0;
-	for (j =0; j < pregunta8.length; j++) {
-		if(pregunta8[j].checked){
-			seleccionadas8[pos8] = pregunta8[j].value;
-			pos8++;
-		}
-	}
-	if(seleccionadas8.length == 0 || seleccionadas8.length == 1){
-		alert("Selecciona más de una opción en la pregunta 8");
-		return false;
-	}else{
+		//PREGUNTA 8
 		var nres = xmlDoc.getElementById("profe008").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -261,18 +299,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[7].style.display = "block";
 			document.getElementsByClassName("main_correcta")[7].style.display = "none";
 		}	
-	}
-
-	var seleccionada9 = "";
-	for (j =0; j < pregunta9.length; j++) {
-		if(pregunta9[j].checked){
-			seleccionada9 = pregunta9[j].value;
-		}
-	}
-	if(seleccionada9 == ""){
-		alert("Selecciona una opción en la pregunta 9");
-		return false;
-	}else{
+		//PREGUNTA 9
 		seleccionada9 = parseInt(seleccionada9);
 		var sel9 = seleccionada9 - 1;
 		var respuesta=xmlDoc.getElementById("profe009").getElementsByTagName("answer")[0].innerHTML;
@@ -285,18 +312,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[8].style.display = "block";
 			document.getElementsByClassName("main_correcta")[8].style.display = "none";
 		}
-	}
-	
-	var seleccionada10 = "";
-	for (j =0; j < pregunta10.length; j++) {
-		if(pregunta10[j].checked){
-			seleccionada10 = pregunta10[j].value;
-		}
-	}
-	if(seleccionada10 == ""){
-		alert("Selecciona una opción en la pregunta 10");
-		return false;
-	}else{
+		//PREGUNTA 10
 		seleccionada10 = parseInt(seleccionada10);
 		var sel10 = seleccionada10 - 1;
 		var respuesta=xmlDoc.getElementById("profe0010").getElementsByTagName("answer")[0].innerHTML;
@@ -309,14 +325,14 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[9].style.display = "block";
 			document.getElementsByClassName("main_correcta")[9].style.display = "none";
 		}
-	}
-	
-	if (correctas + fallidas == 10){
-		document.getElementById("correctas").innerHTML = "Respuestas correctas: <span class='resaltado'>" + correctas + "</span>";
-		document.getElementById("fallidas").innerHTML = "Respuestas incorrectas: <span class='resaltado'>" + fallidas + "</span>";
-		document.getElementById("correct").style.display = "block"
-	}
-	
+		
+		//Aquí mostraremos el resultado
+		if(correctas + fallidas == 10){
+			document.getElementById("correctas").innerHTML = "Correctas: <span class='resaltado'>" + correctas + "</span>";
+			document.getElementById("fallidas").innerHTML = "Incorrectas: <span class='resaltado'>" + fallidas + "</span>";
+			document.getElementById("correct").style.display = "block"
+		}
+	}	
 	return false;
 }
 
