@@ -29,7 +29,7 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 ### Tipo Checkbox
 | **Pregunta 7** | **Pregunta 8** |
 | ---------- | ---------- |
-| ![Pregunta 7:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta7.png)   | ![Pregunta 8:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta8.png)   |
+| ![Pregunta 7:](https://github.com/sergjime/Examen-autocorregible/blob/master/img/pregunta7.png)   | ![Pregunta 8:](https://github.com/sergjime/Examen-parte1/blob/master/img/pregunta8.png)   |
 ### Tipo Radio
 | **Pregunta 9** | **Pregunta 10** |
 | ---------- | ---------- |
