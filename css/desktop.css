@@ -155,5 +155,5 @@ label.pregunta,.main_correcta,.main_fallida,.negcurs,input,select,fieldset{
 #correctas,#fallidas{
   border: solid 1px;
   border-radius: 50px;
-  padding: 0 10%;
+  padding: 0 0.1%;
 }
