@@ -1,4 +1,4 @@
-//var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
+var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
 var la_id=null;
 var xmlDoc;
 
@@ -10,7 +10,7 @@ window.onload = function(){
 			gestionarXml(this);
 		}
 	};
-	xhttp.open("GET", "xml/dtd/questions.xml", true);
+	xhttp.open("GET", url, true);
 	xhttp.send();
 }
 
