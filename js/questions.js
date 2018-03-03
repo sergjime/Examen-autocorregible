@@ -1,9 +1,8 @@
-var url = "https://rawgit.com/sergjime/Examen-autocorregible/min/xml/dtd/questions.xml";
+var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
 var la_id = null;
 var xmlDoc;
 
 window.onload = function(){ 
-	//LEER XML de xml/preguntas.xml
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
@@ -19,7 +18,7 @@ window.onsubmit = function(){
 	var no_vacio = 0;
 	var correctas = 0;
 	var fallidas = 0;
-
+	
 	var pregunta1 = document.getElementById('formulario').p1texto.value;
 	var pregunta2 = document.getElementById('formulario').p2texto.value;
 	var pregunta3 = document.getElementById('formulario').p3selector;
@@ -31,7 +30,6 @@ window.onsubmit = function(){
 	var pregunta9 = document.getElementById('formulario').Pre9;
 	var pregunta10 = document.getElementById('formulario').Pre10;
 	
-	//Primero validaremos nuestras preguntas antes de corregirlas
 	if(pregunta1.length == 0){
 		alert("No puede dejar la pregunta 1 sin responder");
 		document.getElementById('formulario').p1texto.focus();
@@ -145,9 +143,7 @@ window.onsubmit = function(){
 	}
 	no_vacio++;
 	
-	//Después de validar que ninguna esté vacía procedemos a la corrección de cada pregunta
 	if (no_vacio== 10){
-		//PREGUNTA 1
 		var respuesta=xmlDoc.getElementsByTagName("answer")[0].innerHTML;
 		if(pregunta1 == respuesta){
 			correctas++;
@@ -158,7 +154,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[0].style.display = "block";
 			document.getElementsByClassName("main_correcta")[0].style.display = "none";
 		}
-		//PREGUNTA 2
+
 		var respuesta=xmlDoc.getElementsByTagName("answer")[1].innerHTML;
 		if(pregunta2 == respuesta){
 			correctas++;
@@ -169,7 +165,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[1].style.display = "block";
 			document.getElementsByClassName("main_correcta")[1].style.display = "none";
 		}
-		//PREGUNTA 3
+		
 		var respuesta=xmlDoc.getElementsByTagName("answer")[2].innerHTML;
 		if(pregunta3.selectedIndex-1 == respuesta){
 			correctas++;
@@ -180,7 +176,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[2].style.display = "block";
 			document.getElementsByClassName("main_correcta")[2].style.display = "none";
 		}
-		//PREGUNTA 4
+		
 		var respuesta=xmlDoc.getElementsByTagName("answer")[3].innerHTML;
 		if(pregunta4.selectedIndex-1 == respuesta){
 			correctas++;
@@ -191,7 +187,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[3].style.display = "block";
 			document.getElementsByClassName("main_correcta")[3].style.display = "none";
 		}
-		//PREGUNTA 5
+		
 		var nres = xmlDoc.getElementById("profe005").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -218,7 +214,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[4].style.display = "block";
 			document.getElementsByClassName("main_correcta")[4].style.display = "none";
 		}
-		//PREGUNTA 6
+		
 		var nres = xmlDoc.getElementById("profe006").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -245,7 +241,7 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[5].style.display = "block";
 			document.getElementsByClassName("main_correcta")[5].style.display = "none";
 		}	
-		//PREGUNTA 7
+		
 		var nres = xmlDoc.getElementById("profe007").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -272,7 +268,6 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[6].style.display = "block";
 			document.getElementsByClassName("main_correcta")[6].style.display = "none";
 		}	
-		//PREGUNTA 8
 		var nres = xmlDoc.getElementById("profe008").getElementsByTagName("answer").length;
 		var respuestas=[];
 		for (i = 0; i < nres; i++) {
@@ -299,7 +294,6 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[7].style.display = "block";
 			document.getElementsByClassName("main_correcta")[7].style.display = "none";
 		}	
-		//PREGUNTA 9
 		seleccionada9 = parseInt(seleccionada9);
 		var sel9 = seleccionada9 - 1;
 		var respuesta=xmlDoc.getElementById("profe009").getElementsByTagName("answer")[0].innerHTML;
@@ -312,7 +306,6 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_fallida")[8].style.display = "block";
 			document.getElementsByClassName("main_correcta")[8].style.display = "none";
 		}
-		//PREGUNTA 10
 		seleccionada10 = parseInt(seleccionada10);
 		var sel10 = seleccionada10 - 1;
 		var respuesta=xmlDoc.getElementById("profe0010").getElementsByTagName("answer")[0].innerHTML;
@@ -326,7 +319,6 @@ window.onsubmit = function(){
 			document.getElementsByClassName("main_correcta")[9].style.display = "none";
 		}
 		
-		//Aquí mostraremos el resultado
 		if(correctas + fallidas == 10){
 			document.getElementById("correctas").innerHTML = "Correctas: <span class='resaltado'>" + correctas + "</span>";
 			document.getElementById("fallidas").innerHTML = "Incorrectas: <span class='resaltado'>" + fallidas + "</span>";
@@ -345,13 +337,13 @@ function ponerPreguntaSelected(titulo, opciones, respuesta, position){
 	document.getElementsByClassName("negcurs")[position].innerHTML = titulo;
 	var selector = document.getElementsByClassName("selector")[position-2];
 	if (selector.multiple) {
-		corregirMultiple(opciones, respuesta, position, selector);
+		mostrarMultiple(opciones, respuesta, position, selector);
 	}else{
-		corregirSelected(opciones, respuesta, position, selector);
+		mostrarSelected(opciones, respuesta, position, selector);
 	}
 }
 
-function corregirSelected(opciones, respuesta, position, selector){
+function mostrarSelected(opciones, respuesta, position, selector){
 	for(var i=0; i < opciones.length; i++){
 			var label = document.createElement("option");
 			if (i == respuesta){
@@ -365,7 +357,7 @@ function corregirSelected(opciones, respuesta, position, selector){
 		}
 }
 
-function corregirMultiple(opciones, respuestas, position, selector){
+function mostrarMultiple(opciones, respuestas, position, selector){
 	document.getElementsByClassName("main_fallida")[position].innerHTML = "<span class='resaltado'>FALLASTE.</span> Las respuestas correctas son: <span class='resaltado'>" +  respuestas + "</span>";
 	for(var i=0; i < opciones.length; i++){
 		var label = document.createElement("option");
@@ -415,26 +407,21 @@ function ponerPreguntaCheckRadio(titulo, opciones, respuesta, position){
 	}	
 }
 
-// Recuperamos los datos del fichero XML xml/preguntas.xml
-// xmlDOC es el documento leido XML. 
+ 
 function gestionarXml(dadesXml){
-	xmlDoc = dadesXml.responseXML; //Parse XML to xmlDoc
-	//datosXml = xmlDoc;
-	
-	//input text 1
+	xmlDoc = dadesXml.responseXML;
+
 	var titulo=xmlDoc.getElementsByTagName("title")[0].innerHTML;
 	document.getElementsByClassName("main_correcta")[0].innerHTML = "Respuesta correcta";
 	var respuesta=xmlDoc.getElementsByTagName("answer")[0].innerHTML;
 	pintarPreguntaTexto(respuesta, titulo, 0);
 
 
-	//input text 2
 	var titulo=xmlDoc.getElementsByTagName("title")[1].innerHTML;
 	document.getElementsByClassName("main_correcta")[1].innerHTML = "Respuesta correcta";
 	var respuesta= xmlDoc.getElementsByTagName("answer")[1].innerHTML;
 	pintarPreguntaTexto(respuesta, titulo, 1);
 	
-	//selected pregunta 3
 	var titulo = xmlDoc.getElementsByTagName("title")[2].innerHTML;
 	document.getElementsByClassName("main_correcta")[2].innerHTML = "Respuesta correcta";
 	var opciones = [];
@@ -445,7 +432,6 @@ function gestionarXml(dadesXml){
 	}
 	ponerPreguntaSelected(titulo,opciones,respuesta, 2);
 
-	//selected pregunta 4
 	var titulo = xmlDoc.getElementsByTagName("title")[3].innerHTML;
 	document.getElementsByClassName("main_correcta")[3].innerHTML = "Respuesta correcta";
 	var opciones = [];
@@ -456,7 +442,6 @@ function gestionarXml(dadesXml){
 	}  
 	ponerPreguntaSelected(titulo,opciones,respuesta, 3);
 	
-	//selected multiple pregunta 5
 	var titulo = xmlDoc.getElementsByTagName("title")[4].innerHTML;
 	document.getElementsByClassName("main_correcta")[4].innerHTML = "Respuestas correctas";
 	var opciones = [];
@@ -471,7 +456,6 @@ function gestionarXml(dadesXml){
 	}
 	ponerPreguntaSelected(titulo,opciones, respuestas, 4);
 
-	//selected multiple pregunta 6
 	var titulo = xmlDoc.getElementsByTagName("title")[5].innerHTML;
 	document.getElementsByClassName("main_correcta")[5].innerHTML = "Respuestas correctas";
 	var opciones = [];
@@ -486,7 +470,6 @@ function gestionarXml(dadesXml){
 	}  
 	ponerPreguntaSelected(titulo,opciones, respuestas, 5);
 	
-	//checkbox pregunta 7
 	var titulo = xmlDoc.getElementsByTagName("title")[6].innerHTML;
 	document.getElementsByClassName("main_correcta")[6].innerHTML = "Respuestas correctas";
 	var opciones = [];
@@ -501,7 +484,6 @@ function gestionarXml(dadesXml){
 	}
 	ponerPreguntaCheckRadio(titulo,opciones, respuestas, 6);
 
-	//checkbox pregunta 8
 	var titulo = xmlDoc.getElementsByTagName("title")[7].innerHTML;
 	document.getElementsByClassName("main_correcta")[7].innerHTML = "Respuestas correctas";
 	var opciones = [];
@@ -516,7 +498,6 @@ function gestionarXml(dadesXml){
 	}
 	ponerPreguntaCheckRadio(titulo,opciones, respuestas, 7);
 	
-	//Radio pregunta 9
 	var titulo = xmlDoc.getElementsByTagName("title")[8].innerHTML;
 	document.getElementsByClassName("main_correcta")[8].innerHTML = "Respuesta correcta";
 	var opciones = [];
@@ -527,7 +508,7 @@ function gestionarXml(dadesXml){
 	}
 	ponerPreguntaCheckRadio(titulo, opciones, respuesta, 8);
 
-	//Radio pregunta 10
+
 	var titulo = xmlDoc.getElementsByTagName("title")[9].innerHTML;
 	document.getElementsByClassName("main_correcta")[9].innerHTML = "Respuesta correcta";
 	var opciones = [];
