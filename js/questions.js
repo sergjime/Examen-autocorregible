@@ -1,4 +1,4 @@
-var url = "https://rawgit.com/sergjime/Examen-autocorregible/master/xml/dtd/questions.xml";
+var url = "https://rawgit.com/sergjime/Examen-autocorregible/min/xml/dtd/questions.xml";
 var la_id = null;
 var xmlDoc;
 
