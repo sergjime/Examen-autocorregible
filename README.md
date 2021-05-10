@@ -41,4 +41,4 @@ El contenido contiene un formulario en su interior el cual consta de 10 pregunta
 
 Las preguntas del examen se cargan mediante el archivo <code>questions.xml</code> y a continuación evalúa qué preguntas son correctas y cuales no.
 
-El rawgit de este proyecto lo podemos ver [aquí](https://rawgit.com/sergjime/Examen-parte1/master/index.html).
+El rawgit de este proyecto lo podemos ver [aquí](https://raw.githack.com/sergjime/Examen-autocorregible/master/index.html).
